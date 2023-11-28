@@ -1,0 +1,64 @@
+﻿@model asp2.Models.ViewModels.ProductListViewModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<!------------------------------ Products------------------------------>
+<div class="small-container">
+    <div class="row row-2">
+        <h2>All Products</h2>
+        <select>
+            <option>Default sorting</option>
+            <option>Short by price</option>
+            <option>Short by popularity</option>
+            <option>Short by rating</option>
+            <option>Short by sale</option>
+        </select>
+    </div>
+
+    <!--<h2 class="title" >Featured Products</h2>-->
+    
+    
+    <div class="row">
+        @foreach (var item in Model.Products)
+        {
+            <div class="col-4">
+                <div class="product-link">
+                    <a class="product-image" onclick="location.href='/Products/ProductDetail/?id=@item.ProductId'">
+                        <img alt="caigido" src="@item.ProductPhoto">
+                    </a>
+                    <button onclick="location.href='/Cart/AddToCart/?productID=@item.ProductId'" class="product-add">
+                        <i class="fa fa-shopping-cart"></i>ADD TO CART
+                    </button>
+                </div>
+                <a onclick="location.href='/Products/ProductDetail/?id=@item.ProductId'">
+                    <h4>@item.ProductName</h4>
+                </a>
+                <hr>
+                <div class="group-info">
+                    <div class="rating group-item">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <i class="fa fa-star-o"></i>
+                    </div>
+                    <p class="group-item">$@item.ProductPrice</p>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="page-btn">
+        <span onclick="location.href='/Products/Index/?productPage=1'">1</span>
+        <span onclick="location.href='/Products/Index/?productPage=2'">2</span>
+        <span onclick="location.href='/Products/Index/?productPage=3'">3</span>
+        <span onclick="location.href='/Products/Index/?productPage=4'">4</span>
+        <span onclick="location.href='/Products/Index/?productPage=@(@Model.PagingInfo.CurrentPage+1)'">&#8594;</span>
+    </div>
+
+</div>
+      
