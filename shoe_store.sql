@@ -1,12 +1,11 @@
 
-
-
 --------------------- __EFMigrationsHistory --------------------------------
 CREATE TABLE [dbo].[__EFMigrationsHistory] (
     [MigrationId]    NVARCHAR (150) NOT NULL,
     [ProductVersion] NVARCHAR (32)  NOT NULL,
     CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY CLUSTERED ([MigrationId] ASC)
 );
+-- done
 
 --------------------- Articles --------------------------------
 CREATE TABLE [dbo].[Articles] (
@@ -16,6 +15,7 @@ CREATE TABLE [dbo].[Articles] (
     [Pulished]  NVARCHAR (100) NOT NULL,
     CONSTRAINT [PK_Articles] PRIMARY KEY CLUSTERED ([ArticleId] ASC)
 );
+--done
 
 --------------------- AspNetRoleClaims --------------------------------
 
@@ -127,7 +127,7 @@ CREATE TABLE [dbo].[Categories] (
     [CategoryOrder] INT            NOT NULL,
     CONSTRAINT [PK_Categories] PRIMARY KEY CLUSTERED ([CategoryId] ASC)
 );
-
+--done
 --------------------- Products --------------------------------
 
 CREATE TABLE [dbo].[Products] (
@@ -145,7 +145,7 @@ CREATE TABLE [dbo].[Products] (
     CONSTRAINT [FK_Products_Categories_CategoryId] FOREIGN KEY ([CategoryId]) REFERENCES [dbo].[Categories] ([CategoryId]) ON DELETE CASCADE,
     CONSTRAINT [FK_Products_Sizes_SizeId] FOREIGN KEY ([SizeId]) REFERENCES [dbo].[Sizes] ([SizeId]) ON DELETE CASCADE
 );
-
+--done
 
 GO
 CREATE NONCLUSTERED INDEX [IX_Products_CategoryId]
@@ -155,7 +155,7 @@ CREATE NONCLUSTERED INDEX [IX_Products_CategoryId]
 GO
 CREATE NONCLUSTERED INDEX [IX_Products_SizeId]
     ON [dbo].[Products]([SizeId] ASC);
-
+--done
 --------------------- Sizes --------------------------------
 
 
@@ -164,7 +164,7 @@ CREATE TABLE [dbo].[Sizes] (
     [SizeName] NVARCHAR (10) NULL,
     CONSTRAINT [PK_Sizes] PRIMARY KEY CLUSTERED ([SizeId] ASC)
 );
-
+--done
 
 
 --------------------- insert db [__EFMigrationsHistory]  --------------------------------

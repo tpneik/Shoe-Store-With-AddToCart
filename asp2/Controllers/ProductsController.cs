@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using asp1.Models;
 using asp2.Data;
-using asp2.Infrastructure;
 using asp2.Models;
 using asp2.Models.ViewModels;
 
@@ -24,23 +23,23 @@ namespace asp2.Controllers
         int PageSize = 8;
 
         // GET: Products
-        public async Task<IActionResult> Index(int productPage=1)
+        public async Task<IActionResult> Index(int productPage = 1)
         {
             //var applicationDbContext = _context.Products.Include(p => p.Category).Include(p => p.Size);
             //return View(await applicationDbContext.ToListAsync());
             return View(
                 new ProductListViewModel
                 {
-                        Products = _context.Products
-                        .Skip((productPage-1)*PageSize)
+                    Products = _context.Products
+                        .Skip((productPage - 1) * PageSize)
                         .Take(PageSize),
-                        PagingInfo = new PagingInfo
-                        {
-                            ItemPerPage = PageSize,
-                            CurrentPage = productPage,
-                            TotalItem = _context.Products.Count()
-                        }
+                    PagingInfo = new PagingInfo
+                    {
+                        ItemPerPage = PageSize,
+                        CurrentPage = productPage,
+                        TotalItem = _context.Products.Count()
                     }
+                }
                 );
         }
 
@@ -185,14 +184,14 @@ namespace asp2.Controllers
             {
                 _context.Products.Remove(product);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool ProductExists(int id)
         {
-          return (_context.Products?.Any(e => e.ProductId == id)).GetValueOrDefault();
+            return (_context.Products?.Any(e => e.ProductId == id)).GetValueOrDefault();
         }
     }
 }

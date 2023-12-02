@@ -57,7 +57,7 @@ namespace asp2.Controllers
             if (product != null)
             {
                 Cart = HttpContext.Session.GetJson<Cart>("cart");
-                Cart.RemoveItem(product,1);
+                Cart.RemoveItem(product, 1);
                 HttpContext.Session.SetJson("cart", Cart);
             }
             return View("Cart", Cart);
