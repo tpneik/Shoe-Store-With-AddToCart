@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace asp1.Models
+namespace asp2.Models
 {
 	public class Category
 	{

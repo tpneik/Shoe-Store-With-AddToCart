@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using asp1.Models;
+//using asp1.Models;
 using asp2.Data;
 using asp2.Models;
 using asp2.Models.ViewModels;

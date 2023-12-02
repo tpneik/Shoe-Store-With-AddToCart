@@ -1,4 +1,4 @@
-﻿using asp1.Models;
+﻿using asp2.Models;
 
 namespace asp2.Models.ViewModels
 {
