@@ -16,3 +16,8 @@ Mặc dù rất mệt moỉ nhưng mà tôi còn ăn cứt mấy lần với git
 - Chỉnh sửa lại cái LoginForm cho đúng với Frontend. 
 - Nếu được thì build thêm chức năng nhỏ nhỏ, ví dụ như sort theo nhu cầu của khánh hàng trên thanh sort. 
 - Phân trang nâng cao mà không cần load lại trang. 
+
+
+** update 2/12
+- Đã migrate migrate dữ liệu lên azure 
+- Sử dụng connection string cho cho xử lý data.
