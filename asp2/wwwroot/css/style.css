@@ -161,7 +161,7 @@ p{
     margin: 0 auto 80px;
     position: relative;
     line-height: 60px;
-    color: #ffffff;
+    color: #555;
 }
 .title::after{
     content: '';
@@ -747,7 +747,6 @@ textarea.input {
     top: 1rem;
     transform: translateY(0);
 }
-
 
     .btn:hover {
         background-color: transparent;

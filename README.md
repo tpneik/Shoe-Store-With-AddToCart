@@ -21,3 +21,6 @@ Mặc dù rất mệt moỉ nhưng mà tôi còn ăn cứt mấy lần với git
 ** update 2/12
 - Đã migrate migrate dữ liệu lên azure 
 - Sử dụng connection string cho cho xử lý data.
+
+** update 3/12 - 2:45pm 
+- check lại css 

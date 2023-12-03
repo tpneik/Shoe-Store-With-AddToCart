@@ -5,13 +5,13 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-//using asp1.Models;
 using asp2.Data;
 using asp2.Models;
 using asp2.Models.ViewModels;
 
 namespace asp2.Controllers
 {
+    
     public class ProductsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -20,29 +20,39 @@ namespace asp2.Controllers
         {
             _context = context;
         }
-        int PageSize = 8;
+        readonly int PageSize = 8;
 
         // GET: Products
-        public async Task<IActionResult> Index(int productPage = 1)
+        public async Task<IActionResult> Index(int productPage = 1, int filterType = 1)
         {
-            //var applicationDbContext = _context.Products.Include(p => p.Category).Include(p => p.Size);
-            //return View(await applicationDbContext.ToListAsync());
+            IQueryable<Product> products = _context.Products.OrderBy(p => p.ProductId);
+            ViewBag.currentPagesValue = productPage;
+            ViewBag.filterTypeValue = filterType;
+            switch (filterType){
+                case 2:
+                    products = products.OrderByDescending(p => p.ProductPrice);
+                    break;
+                case 3:
+                    products = products.OrderBy(p => p.ProductPrice);
+                    break;
+                default:
+                    break;
+            }
             return View(
-                new ProductListViewModel
-                {
-                    Products = _context.Products
-                        .Skip((productPage - 1) * PageSize)
-                        .Take(PageSize),
-                    PagingInfo = new PagingInfo
+                    new ProductListViewModel
                     {
-                        ItemPerPage = PageSize,
-                        CurrentPage = productPage,
-                        TotalItem = _context.Products.Count()
+                        Products = products
+                          .Skip((productPage - 1) * PageSize)
+                          .Take(PageSize),
+                        PagingInfo = new PagingInfo
+                        {
+                            ItemPerPage = PageSize,
+                            CurrentPage = productPage,
+                            TotalItem = _context.Products.Count()
+                        }
                     }
-                }
                 );
         }
-
         public IActionResult ProductDetail(int? id)
         {
             return View(_context.Products.SingleOrDefault(p => p.ProductId == id));

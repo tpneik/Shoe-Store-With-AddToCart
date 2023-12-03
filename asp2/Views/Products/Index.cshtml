@@ -10,12 +10,10 @@
 <div class="small-container">
     <div class="row row-2">
         <h2>All Products</h2>
-        <select>
+        <select onchange="location.href=this.value;">
             <option>Default sorting</option>
-            <option>Short by price</option>
-            <option>Short by popularity</option>
-            <option>Short by rating</option>
-            <option>Short by sale</option>
+            <option value="/Products/Index/?productPage=@ViewBag.currentPagesValue&filterType=2">Short by Increasing Price</option>
+            <option value="/Products/Index/?productPage=@ViewBag.currentPagesValue&filterType=3">Short by Decreasing Price</option>
         </select>
     </div>
 
@@ -53,11 +51,11 @@
     </div>
 
     <div class="page-btn">
-        <span onclick="location.href='/Products/Index/?productPage=1'">1</span>
-        <span onclick="location.href='/Products/Index/?productPage=2'">2</span>
-        <span onclick="location.href='/Products/Index/?productPage=3'">3</span>
-        <span onclick="location.href='/Products/Index/?productPage=4'">4</span>
-        <span onclick="location.href='/Products/Index/?productPage=@(@Model.PagingInfo.CurrentPage+1)'">&#8594;</span>
+        <span onclick="location.href='/Products/Index/?productPage=1&filterType=@ViewBag.filterTypeValue'">1</span>
+        <span onclick="location.href='/Products/Index/?productPage=2&filterType=@ViewBag.filterTypeValue'">2</span>
+        <span onclick="location.href='/Products/Index/?productPage=3&filterType=@ViewBag.filterTypeValue'">3</span>
+        <span onclick="location.href='/Products/Index/?productPage=4&filterType=@ViewBag.filterTypeValue'">4</span>
+        <span onclick="location.href='/Products/Index/?productPage=@(@Model.PagingInfo.CurrentPage+1)&filterType=@ViewBag.filterTypeValue'">&#8594;</span>
     </div>
 
 </div>
