@@ -38,8 +38,7 @@ a {
     color: #555;
 }
 p{
-    color: #000;
-    font-weight: bold;
+    color: #555;
 }
 .container{
     max-width: 1300px;
@@ -162,7 +161,7 @@ p{
     margin: 0 auto 80px;
     position: relative;
     line-height: 60px;
-    color: #555;
+    color: #ffffff;
 }
 .title::after{
     content: '';
@@ -702,12 +701,6 @@ form {
     position: relative;
 }
 
-.title {
-    font-weight: 500;
-    font-size: 1.5rem;
-    line-height: 1;
-    margin-bottom: 0.7rem;
-}
 
 .input-container {
     position: relative;
@@ -755,19 +748,6 @@ textarea.input {
     transform: translateY(0);
 }
 
-.btn {
-    padding: 0.6rem 1.3rem;
-    background-color: #fff;
-    border: 2px solid #fafafa;
-    font-size: 0.95rem;
-    color: #ffd6d6;
-    line-height: 1;
-    border-radius: 25px;
-    outline: none;
-    cursor: pointer;
-    transition: 0.3s;
-    margin: 0;
-}
 
     .btn:hover {
         background-color: transparent;
