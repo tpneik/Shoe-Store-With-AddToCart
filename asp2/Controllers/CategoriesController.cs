@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using asp2.Models;
 using asp2.Data;
+using Microsoft.AspNetCore.Authorization;
 
 namespace asp2.Controllers
 {

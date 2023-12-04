@@ -6,7 +6,7 @@ Cần chỉnh sửa, phối hợp lại code cho Frontend và backend chạy mư
 
 #Update ngày 28/11.
 Chúng tôi đã có một ngày nhucut cùng asp.net
-Mặc dù rất mệt moỉ nhưng mà tôi còn ăn cứt mấy lần với github nữa. Nhưng không sao, giờ chắc là ổn hơn rồi. 
+Mặc dù rất mệt moỉ nhưng mà tôi còn ***** mấy lần với github nữa. Nhưng không sao, giờ chắc là ổn hơn rồi. 
 - Hiện đã Login/Logout được. Register/ Xác thực được.
 - Đã có phần giới thiệu cho web
 - Đã có phần contact, không những thế còn có được cái form gửi nữa. 
@@ -24,3 +24,6 @@ Mặc dù rất mệt moỉ nhưng mà tôi còn ăn cứt mấy lần với git
 
 ** update 3/12 - 2:45pm 
 - check lại css 
+
+** update 5:00 am
+- update FE

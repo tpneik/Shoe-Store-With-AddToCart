@@ -24,6 +24,14 @@ namespace asp2.Controllers
             HttpContext.Session.SetJson("cart", Cart);
             return View("Cart", Cart);
         }
+
+        public IActionResult Cart_Checkout()
+        {
+            Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
+            HttpContext.Session.SetJson("cart", Cart);
+            return View("Checkout", Cart);
+        }
+
         public IActionResult AddToCart(int productID)
         {
             Product? product = _context.Products
