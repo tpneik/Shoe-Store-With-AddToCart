@@ -1,13 +1,40 @@
 ﻿@model Cart
 
+<div class="body">
+    <div class="part-1">
+        <div class="container">
+            <div class="header">
+                <h2>Payment Confirmation</h2>
+            </div>
 
-<div class="small-container cart-page">
-    <table>
-        <tr>
-            <th>Product</th>
-            <th>Quantity</th>
-            <th>Subtotal</th>
-        </tr>
+  <!-- Customer Information -->
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Your Name">
+                <label for="addr">Address</label>
+                <input type="text" id="addr" placeholder="Your Address">
+                <label for="phone">Phone</label>
+                <input type="text" id="phone" placeholder="Your Phone Number">
+                <label for="email">Email</label>
+                <input type="text" id="email" placeholder="Your Email">
+            </div>
+
+            <button class="btn-submit">Confirm Information</button>
+        </div>
+    </div>
+    
+    <div class="part-2">
+        <div class="container">
+            <div class="header">
+                <h2>Payment Confirmation</h2>
+            </div>
+            <div class="small-container cart-page">
+                <table>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                    </tr>
         @* @foreach (var item in Model.Lines)
         {
             <tr>
@@ -45,14 +72,13 @@
                         <button onclick="location.href='/Cart/RemoveItemFromCart/?productID=@item.Product.ProductId'" alt="quantity-button" class="quantity-button">-</button>
                         <div><label class="quantity-value">@item.Quantity</label></div>
                         <div><button onclick="location.href='/Cart/AddToCart/?productID=@item.Product.ProductId'" alt="quantity-button" class="quantity-button">+</button></div>
+                    </div>
                 </td>
 
                 <td>$@(item.Quantity * item.Product.ProductPrice)</td>
             </tr>
         }
-        
-        
-    </table>
+                    </table>
     @if (Model.Lines.Count() == 0)
     {
         <h4> NO ITEM ON CART </h4>
@@ -65,7 +91,10 @@
             </tr>
         </table>
     </div>
+    </div>
 </div>
+
+
 
 
 @* @await Component.InvokeAsync("NavBar")
