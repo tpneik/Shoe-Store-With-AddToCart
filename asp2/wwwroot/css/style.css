@@ -10,7 +10,7 @@ body{
 .navbar{
     display:flex;
     align-items: center;
-    padding:20px;
+    padding-top: 20px;
 }
 /*nav maenu on the right as a unordered list*/
 nav{
@@ -710,7 +710,7 @@ form a{
 }
 
 form {
-    padding: 2.3rem 2.2rem;
+    padding: 0.3rem 2.2rem;
     z-index: 10;
     overflow: hidden;
     position: relative;
@@ -765,7 +765,7 @@ textarea.input {
 
     .btn:hover {
         background-color: transparent;
-        color: #fff;
+        color: #e0b4b4;
     }
 
 .input-container span {
