@@ -2,7 +2,7 @@
 
 <div class="navbar">
     <div class="logo">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><img src="/images/logo.png" width="125px"></a>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><img src="/images/logo.png" width="125px" alt="Logo"></a>
     </div>
     <nav>
         <ul id="MenuItems">
@@ -10,12 +10,9 @@
             <li><a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Index">Product</a></li>
             <li><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="About">About</a></li>
             <li><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-@*             <li><a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Index">Account</a></li>
- *@
-            <li><a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Create">Create</a></li>
         </ul>
     </nav>
-    <a onclick="location.href='/Cart/Cart_apper'"><img src="/images/cart.png" width="30px" height="30px"></a>
+    <a onclick="location.href='/Cart/Cart_apper'"><img src="/images/cart.png" width="30px" height="30px" alt="Cart"></a>
     <img src="/images/menu.png" class="menu-icon" alt="menu" onClick="menutoggle()">
     <partial name="_LoginPartial" />
 </div>
