@@ -16,6 +16,8 @@ builder.Services.AddControllersWithViews();
 // session addition
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession();
+builder.Services.AddRazorPages();
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 var app = builder.Build();
 
